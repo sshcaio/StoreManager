@@ -5,7 +5,7 @@ const getAllProducts = async (_request, response) => {
     const result = await getProducts();
     return response.status(200).json(result);
   } catch (error) {
-    return response.status(500).json({ message: 'Internal server error' })
+    return response.status(500).json({ message: 'Internal server error' });
   }
 };
 
@@ -25,7 +25,6 @@ const getProductsById = async (request, response) => {
   } catch (error) {
     return response.status(500).json({ message: 'Internal server error' });
   }
-
 };
 
 module.exports = {

@@ -1,4 +1,4 @@
-const { getAll, getById } = require("../models/ProductsModel");
+const { getAll, getById } = require('../models/ProductsModel');
 
 const getProducts = async (id = null) => {
   if (!id) {
