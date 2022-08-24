@@ -37,7 +37,7 @@ const postNewProduct = async (request, response) => {
   } catch (error) {
     return response.status(500).json({ message: 'Internal server error' });
   }
-}
+};
 
 module.exports = {
   getAllProducts,
