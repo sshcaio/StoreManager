@@ -39,8 +39,28 @@ const postNewProduct = async (request, response) => {
   }
 };
 
+const updateProduct = async (request, response) => {
+  try {
+    const { name } = request.body;
+    const { id } = request.params;
+    if (!id) {
+      return response.status(400).json({ message: 'Bad request' });
+    }
+    
+    const update = await putProduct(id, name);
+    if (!update) {
+      return response.status(404).json({ message: 'Product not found' })
+    }
+    
+    return response.status(200).json(result);
+  } catch (error) {
+    return response.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsById,
   postNewProduct,
+  updateProduct,
 };
