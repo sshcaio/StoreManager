@@ -1,4 +1,4 @@
-const { getProducts, postProduct } = require('../services/ProductsService');
+const { getProducts, postProduct, putProduct } = require('../services/ProductsService');
 
 const getAllProducts = async (_request, response) => {
   try {
@@ -51,7 +51,8 @@ const updateProduct = async (request, response) => {
     if (!update) {
       return response.status(404).json({ message: 'Product not found' })
     }
-    
+
+    const result = await getProducts(id);
     return response.status(200).json(result);
   } catch (error) {
     return response.status(500).json({ message: 'Internal server error' });
