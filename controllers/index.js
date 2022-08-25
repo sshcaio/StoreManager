@@ -1,5 +1,5 @@
 const { getAllProducts, getProductsById,
-  postNewProduct, updateProduct } = require('./ProductController');
+  postNewProduct, updateProduct, deleteProductById } = require('./ProductController');
 const { getAllSales, getSalesById } = require('./SalesController');
 
 module.exports = {
@@ -7,6 +7,7 @@ module.exports = {
   getProductsById,
   postNewProduct,
   updateProduct,
+  deleteProductById,
   getAllSales,
   getSalesById,
 };
