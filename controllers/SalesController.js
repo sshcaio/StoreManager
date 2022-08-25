@@ -18,7 +18,7 @@ const getSalesById = async (request, response) => {
 
     const result = await getSales(id);
     if (result.length <= 0) {
-      return response.status(404).json({ "message": "Sale not found" });
+      return response.status(404).json({ message: 'Sale not found' });
     }
 
     return response.status(200).json(result);
