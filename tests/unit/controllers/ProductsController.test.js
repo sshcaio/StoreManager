@@ -18,11 +18,6 @@ const mockDatabase = [
   },
 ];
 
-const mockProduct = {
-  "id": 1,
-  "name": "Martelo de Thor"
-};
-
 describe('GET Products', () => {
   describe('getAllProducts', () => {
     describe('with no params', () => {
@@ -42,12 +37,12 @@ describe('GET Products', () => {
 
       it('should return a 200 OK status', async () => {
         await controllers.getAllProducts(request, response);
-        expect(response.status.calledWith(200)).to.be.equal(false);
+        expect(response.status.calledWith(200)).to.be.equal(true);
       });
 
       it('should return an array with the products', async () => {
         await controllers.getAllProducts(request, response);
-        expect(response.json.calledWith(mockDatabase)).to.be.equal(false);
+        expect(response.json.calledWith(mockDatabase)).to.be.equal(true);
       });
     })
   })
